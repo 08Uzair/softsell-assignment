@@ -1,0 +1,720 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Valorant";
+  src: url("/assets/fonts/Valorant Font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/Montserrat.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* * {
+  transition: all ease 0.5s;
+} */
+
+.background-image {
+  position: relative; /* Make it a positioned element */
+  background-image: url("../../public/assets/Images/background-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media screen and (max-width: 1024px) {
+  .background-image {
+    background-image: url("../../public/assets/Images/mobilebg.png");
+
+    background-size: 100% 9%;
+  }
+  .mainServeice {
+    flex-direction: column;
+  }
+}
+
+.lineBreak {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+}
+
+.activeBg {
+  background: #cbfb45;
+}
+/* Initial state for arrowBtn */
+.arrowBtn {
+  transition: all 0.5s ease-in-out;
+}
+
+/* Hover effect on customBtn to move arrowBtn */
+.customBtn:hover .arrowBtn {
+  transform: translateX(13px);
+}
+
+/* Menu animation */
+
+.menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu li {
+  position: absolute;
+  top: -14rem;
+  transition: 0.5s ease;
+  transition-delay: calc(0.1s * var(--i));
+  transform: translateY(193.5px); /* Move downwards */
+}
+.menu.active li {
+  transition: all 0.5s ease-in-out;
+  display: inline;
+  margin-top: calc(4.5rem * var(--i));
+  transform: translateY(-100px); /* Move upwards when active */
+}
+.menu li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  color: var(--clr);
+  border-radius: 50%;
+  background: #ffffff24;
+  font-size: 1.5em;
+  backdrop-filter: blur(20px);
+}
+
+.menu .toggle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  /* background: #2f363e; */
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1111;
+  font-size: 2em;
+}
+
+.menu.active .toggle {
+  transform: rotate(315deg);
+}
+.card:hover .cardTxt1 {
+  color: #000;
+  font-weight: 900;
+}
+/*  */
+
+.serviceCards {
+  width: 100%;
+}
+
+#checkbox {
+  accent-color: #cbfb45;
+}
+/* Our client css start */
+@keyframes slides {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate1 {
+  0% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.html {
+  animation: orbit 7s linear infinite;
+  position: relative;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(20px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg) translateX(20px) rotate(360deg);
+  }
+}
+
+.css {
+  animation: orbit 10s linear infinite;
+  position: relative;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(20px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(20px) rotate(-360deg);
+  }
+}
+
+.figma {
+  animation: orbit 15s linear infinite;
+  position: relative;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(20px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg) translateX(20px) rotate(360deg);
+  }
+}
+
+.cpp {
+  animation: orbit 8s linear infinite;
+  position: relative;
+}
+.desk3 {
+  visibility: hidden;
+}
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(20px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(20px) rotate(-360deg);
+  }
+}
+
+.illustrator {
+  animation: orbit 19s linear infinite;
+  position: relative;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(20px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg) translateX(20px) rotate(360deg);
+  }
+}
+
+.illustrator {
+  animation: orbit 5s linear infinite;
+  position: relative;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(10px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(10px) rotate(-360deg);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 250px;
+
+  z-index: 2;
+}
+
+.logo_items {
+  animation: 10s slides infinite linear;
+}
+
+/* Our client css end */
+
+.phoneimage_box {
+  background-image: url("../../public/assets/Images/backgroundsvg.svg");
+  background-size: 100% 150%;
+  width: 100%;
+}
+
+/* Service Section CSS */
+
+.box:hover .arrow {
+  display: flex;
+  transition: all 2s ease;
+}
+
+.box:hover h1 {
+  color: #cbfb45;
+}
+
+.box:hover p {
+  color: #cbfb45;
+}
+
+/* Service Card Animation CSS */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.description {
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+}
+
+.circle-top,
+.circle-bottom {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #dedede;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+
+.circle-top {
+  top: -50px;
+  left: -10px;
+}
+
+.circle-bottom {
+  bottom: -50px;
+  right: -10px;
+}
+
+.card:hover .circle-top,
+.card:hover .circle-bottom {
+  transform: scale(18);
+}
+
+.card:hover .description h1,
+.card:hover .description p {
+  color: rgb(71, 71, 71);
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(203, 251, 69, 0.6),
+      0 0 30px rgba(203, 251, 69, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(203, 251, 69, 1), 0 0 40px rgba(203, 251, 69, 0.7);
+  }
+}
+
+.glow-bar {
+  animation: glow 1.5s infinite ease-in-out;
+  background-color: #cbfb45;
+}
+/* Responsiveness in Service Section  */
+@media (max-width: 1200px) {
+  .bookBtn {
+    display: none !important;
+  }
+  .stack-card-shadow {
+    height: 710px !important;
+  }
+  .stackImg2 {
+    top: -7rem !important;
+  }
+  .stackImg1 {
+    bottom: -7rem !important;
+  }
+  .card1Cont {
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+  }
+  .stackbg {
+    height: 225px !important;
+    right: 12rem !important;
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .txt1 {
+    font-size: 40px;
+  }
+  .treeImg {
+    visibility: hidden !important;
+  }
+  .txt2 {
+    text-align: center;
+  }
+
+  .box h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .box p {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .txt4 {
+    font-size: 20px;
+    margin-right: 5rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .txt3 {
+    font-size: 28px;
+  }
+}
+
+/* End of Service Section Css */
+
+/*Home  */
+.mainScreen {
+  overflow: hidden;
+}
+
+@media (max-width: 1030px) {
+  .desktopimg {
+    height: 80% !important;
+  }
+
+  .illustrator {
+    top: 22rem;
+    left: -12rem;
+    width: 100% !important;
+    height: 85px !important;
+  }
+
+  .figma {
+    top: 10rem;
+    left: 10rem;
+    width: 100% !important;
+    height: 85px !important;
+  }
+
+  .cpp {
+    left: 12rem;
+    bottom: 10rem;
+    width: 100% !important;
+    height: 85px !important;
+  }
+
+  .html {
+    top: 10rem;
+    right: 0rem;
+    width: 100% !important;
+    height: 85px !important;
+  }
+
+  .whyImg {
+    margin-left: -35rem;
+  }
+
+  .cardtxt {
+    position: absolute !important;
+    top: 5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+  }
+
+  /* .serviceCards {
+    width: 350px !important;
+  } */
+  .serviceText1 {
+    font-size: 20px !important;
+  }
+  .serviceText2 {
+    font-size: 15px !important;
+  }
+  .desk2 {
+    display: none !important;
+  }
+  .desk3 {
+    visibility: visible;
+    width: 288px !important;
+  }
+}
+
+@media (max-width: 1025px) {
+  .figma {
+    position: absolute;
+    left: 20rem;
+    top: 8rem;
+    width: 13% !important;
+    height: 85px !important;
+  }
+
+  .illustrator {
+    position: absolute !important;
+    top: 13rem;
+    left: 17rem;
+    width: 10% !important;
+    height: 85px !important;
+  }
+
+  .html {
+    top: 8rem;
+    right: -2rem;
+    width: 14% !important;
+    height: 85px !important;
+  }
+  .cpp {
+    left: -17rem !important;
+    bottom: -5px !important;
+    width: 20% !important;
+  }
+
+  .css {
+    width: 19%;
+    bottom: 0rem !important;
+    left: 7rem;
+  }
+  .whyImg {
+    margin-left: -45rem;
+  }
+  .serviceMob {
+    display: block !important;
+  }
+  .serviceRight {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .mainScreen {
+    margin-top: 10rem;
+  }
+  .stackbg {
+    right: 8rem !important;
+    height: 200px !important;
+  }
+  .stackbgCont {
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+  }
+  .stackbgCont1 {
+    margin-top: 27px !important;
+  }
+  .cardtxt {
+    top: 27.5px !important;
+  }
+}
+
+@media (max-width: 435px) {
+  .foottxt1 {
+    font-size: 30px !important;
+  }
+  .foottxt2 {
+    font-size: 8px !important;
+    margin-left: 0px !important;
+  }
+  .stackbg {
+    height: 173.5px !important;
+    width: 289.5px !important;
+    right: 1.5rem !important;
+    bottom: 1rem;
+  }
+  .stackImg2 {
+    top: -11.5rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    width: 95% !important;
+  }
+}
+@media (max-width: 365px) {
+  .mainScreen {
+    margin-top: 7rem !important;
+  }
+  .css {
+    top: 4rem;
+    left: 3rem;
+  }
+
+  .figma {
+    left: 12rem;
+    top: 17rem;
+  }
+
+  .illustrator {
+    left: 15rem;
+  }
+
+  .cpp {
+    top: 15rem;
+    left: -15rem !important;
+    width: 12% !important;
+  }
+}
+
+/*  */
+/* Temporaray css start */
+
+.stack-cards {
+  --stack-cards-gap: 40px;
+}
+
+.stack-cards_item {
+  position: sticky;
+  top: 140px;
+  -webkit-transform-origin: center top;
+  transform-origin: center top;
+  overflow: hidden;
+}
+.stack-card-shadow {
+  box-shadow: 0px 0px 10px 2.616px rgba(0, 0, 0, 0.15) !important;
+}
+
+.lottie-box {
+  box-shadow: 2px 2px 35px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 1024px) {
+  .container_padding {
+    padding: 60px 60px;
+  }
+}
+
+.gallery {
+  display: none;
+}
+
+.container_padding {
+  padding: 40px 20px;
+}
+
+@media only screen and (max-width: 549px) {
+  .stack-cards_item {
+    top: 40px;
+  }
+
+  .container_padding {
+    padding: 20px 20px;
+  }
+}
+
+.buttons-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #000;
+}
+
+/* About page css frpm 1025px*/
+
+.custom-product-grid {
+  display: grid;
+  gap: 30px;
+  /* Default gap */
+  grid-template-columns: 1fr;
+  /* 1 column by default */
+}
+
+@media (min-width: 640px) {
+  .custom-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .menuBtn {
+    margin-right: 3rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .custom-product-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+}
+
+.custom-drop-shadow {
+  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.329));
+}
+
+.card-custom-gradient {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+}
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scroll-container {
+  display: flex;
+  animation: infinite-scroll 30s linear infinite;
+  justify-content: flex-start;
+}
+
+.scroll-container > div {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .scroll-container {
+    animation: infinite-scroll 10s linear infinite;
+  }
+}
+@media (max-width: 325px) {
+  .serviceText1 {
+    font-size: 20px !important;
+  }
+  .serviceText2 {
+    font-size: 12px !important;
+  }
+}
