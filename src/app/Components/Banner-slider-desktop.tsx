@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { LaptopFrame } from '@/app/Components/laptop-frame'
+// import { LaptopFrame } from '@/app/Components/laptop-frame'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const screenshots = [
@@ -57,7 +57,7 @@ export default function BannerSlider() {
 
           {/* Main Laptop Frame */}
           <div className="w-full md:w-[65%] z-10 px-4 md:px-0">
-            <LaptopFrame>
+            {/* <LaptopFrame> */}
               <AnimatePresence>
                 <motion.div
                   key={`main-${currentIndex}`}
@@ -74,7 +74,7 @@ export default function BannerSlider() {
                   />
                 </motion.div>
               </AnimatePresence>
-            </LaptopFrame>
+            {/* </LaptopFrame> */}
           </div>
 
           {/* Next Image */}
